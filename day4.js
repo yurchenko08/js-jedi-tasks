@@ -1,7 +1,6 @@
 // #9: loop statement --while and do..while http://www.codewars.com/kata/57216d4bcdd71175d6000560
 function padIt(str, n) {
   let i = 1;
-
   while (i <= n) {
     if (i % 2 === 0) {
       str += "*";
@@ -10,7 +9,6 @@ function padIt(str, n) {
     }
     i++;
   }
-
   return str;
 }
 
@@ -18,7 +16,6 @@ function padIt(str, n) {
 function pickIt(arr) {
   const odd = [],
     even = [];
-
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] % 2 === 1) {
       odd.push(arr[i]);
