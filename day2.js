@@ -1,5 +1,5 @@
 // Basic data types--Number http://www.codewars.com/kata/571edd157e8954bab500032d
-let v1=50;v2=100,v3=150,v4=200,v5=2,v6=250
+let v1=50,v2=100,v3=150,v4=200,v5=2,v6=250;
 const equal1=()=>v1+v1;
 const equal2=()=>v3-v1;
 const equal3=()=>v5*v1;
