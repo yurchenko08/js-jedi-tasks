@@ -7,24 +7,22 @@ function threeInOne(arr) {
   return sum;
 }
 // #25: methods of arrayObject---reverse() and sort() http://www.codewars.com/kata/572df796914b5ba27c000c90
+function sortIt(arr) {
+  const result = arr.slice();
+  result.sort((a, b) => {
+    const tempA = arr.filter((el) => el == a).length;
+    const tempB = arr.filter((el) => el == b).length;
+    if (tempA === tempB) return b - a;
+    else if (tempA > tempB) return 1;
+    else return -1;
+  });
+  return result;
+}
 
 // #26: methods of arrayObject---map() http://www.codewars.com/kata/572fdeb4380bb703fc00002c
 function isolateIt(arr) {
   let result = arr.map(function (el) {
-    if (el.length % 2) {
-    let middle = el[Math.floor(el.length / 2)];
-    return el.replace(new RegExp(middle), "|");
-    }
+    return el.slice(0, el.length / 2) + "|" + el.slice(-el.length / 2);
+  });
+  return result;
 }
-}
-  
-
-
-
-//     //    else {
-//     //    let middle=el.length/2
-//     //    el.slice(0,middle)
-//     //      }
-  
-
-// console.log(isolateIt(["abcde", "efgh"]));
