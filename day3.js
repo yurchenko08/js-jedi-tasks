@@ -1,11 +1,11 @@
 // #6: Basic data types--Boolean and conditional statements if..else
-function trueOrFalse(val){
-if (!val) return "false";           
-return "true";
+function trueOrFalse(val) {
+  if (!val) return "false";
+  return "true";
 }
 
 // #7: if..else and ternary operator http://www.codewars.com/kata/57202aefe8d6c514300001fd
-function saleHotdogs(n){
+function saleHotdogs(n) {
   return n < 5 ? n * 100 : n >= 10 ? n * 90 : n * 95;
 }
 
