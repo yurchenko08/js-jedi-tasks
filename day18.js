@@ -1,7 +1,11 @@
 // #30: methods of arrayObject---reduce() and reduceRight() http://www.codewars.com/kata/573156709a231dcec9000ee8
 function tailAndHead(arr) {
-  const result = arr.reduce((a, b, i) => {});
-  return result;
+  const result = [];
+  for (let i = 0; i < arr.length - 1; i++)
+    result.push(
+      Number(arr[i].toString().slice(-1)) + Number((arr[i + 1] + "")[0])
+    );
+  return result.reduce((a, b) => a * b);
 }
 
 // #31: methods of arrayObject---isArray() indexOf() and toString() http://www.codewars.com/kata/5732b0351eb838d03300101d
@@ -26,4 +30,3 @@ function rndCode() {
   }
   return code;
 }
-console.log(rndCode());
