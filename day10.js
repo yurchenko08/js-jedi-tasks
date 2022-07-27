@@ -26,6 +26,7 @@ answer1 = "3879";
 answer2 = "hyFEBg";
 //question3: He stole the treasure is...
 answer3 = "Marie's husband";
+
 // #21: Methods of String object--trim() and the string template
 // http://www.codewars.com/kata/5729b103dd8bac11a900119e
 function fiveLine(s) {
