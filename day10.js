@@ -10,7 +10,7 @@ function alienLanguage(str) {
 // #20: Methods of String object--charAt() charCodeAt() and fromCharCode()
 // http://www.codewars.com/kata/57284d23e81185ae6200162a
 function topSecret(str) {
-  let chars = str.split("");
+  const chars = str.split("");
   for (let i = 0; i < chars.length; i++) {
     if (chars[i].charCodeAt() < 65) continue;
     if (chars[i].charCodeAt() > 122) continue;
