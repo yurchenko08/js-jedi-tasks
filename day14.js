@@ -1,32 +1,32 @@
-// Job Matching #3 https://www.codewars.com/kata/56c2a067585d9ac8280003c9/
 function match(candidate, job) {
-  return matchedExperience(candidate, job) && matchedSkill(candidate, job);
+  return !!matchedExperience(candidate, job) && !!matchedSkill(candidate, job);
 }
 function matchedSkill(candidate, job) {
-  for (skill of candidate.skills) {
-    if (skill.name === job.skills[0].name && skill.preference === "avoid") {
-      return false;
+  let firstCondition;
+  for (const skill of candidate.skills) {
+    if (skill.preference === "avoid") continue;
+    for (const jobSkill of job.skills) {
+      if (
+        skill.name === jobSkill.name ||
+        skill.name === jobSkill.substitutions[0].name
+      )
+        firstCondition = skill;
     }
   }
-
-  for (skill of candidate.skills) {
-    if (
-      skill.name === job.skills[0].name ||
-      skill.name === job.skills[0].substitutions[0].name
-    )
-      return true;
-  }
-  return false;
+  return firstCondition;
 }
 function matchedExperience(candidate, job) {
-  for (skill of candidate.skills) {
-    if (skill.preference === "desired") {
-      skill.experience *= 1.5;
+  let secondCondition;
+  for (const skill of candidate.skills) {
+    if (skill.preference === "desired") skill.experience *= 1.5;
+    for (jobSkill of job.skills) {
+      if (
+        skill.experience >= jobSkill.idealYears &&
+        (skill.name === jobSkill.name ||
+          skill.name === jobSkill.substitutions[0].name)
+      )
+        secondCondition = skill;
     }
-    if (job.skills[0].idealYears <= skill.experience) {
-      return true;
-    }
-    continue;
   }
-  return false;
+  return secondCondition;
 }
