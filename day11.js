@@ -8,11 +8,7 @@ function areEqual(s1, s2) {
 }
 
 function notEqual(s1, s2) {
-  if (s1.size != s2.size) return true;
-  for (value of s1) {
-    if (!s2.has(value)) return true;
-  }
-  return false;
+  return !areEqual(s1, s2);
 }
 // Operations with Sets https://www.codewars.com/kata/5609fd5b44e602b2ff00003a/train/javascript
 function process2Arrays(arr1, arr2) {
