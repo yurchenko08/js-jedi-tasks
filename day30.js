@@ -18,3 +18,7 @@ class HumanSkin extends Cylon {
   }
 }
 //Call function using apply http://www.codewars.com/kata/write-javascripts-call-function-using-apply
+Function.prototype.call = function () {
+  const args = Array.prototype.slice.apply(arguments, [1]);
+  return this.apply(arguments[0], args);
+};
